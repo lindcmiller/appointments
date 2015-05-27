@@ -1,8 +1,10 @@
 $(function () {
+  'use strict';
 
-  function show(html) {
-    $('#main-content').html(html);
-    var appts = [];
+  //function show(html) {
+  //  $('#main-content').html(html);
+
+    var apptArray = [];
 
     $(".appt-info").submit(function(e) {
       e.preventDefault();
@@ -13,23 +15,29 @@ $(function () {
         time: $(".time").val(),
         street: $(".street").val(),
         city: $(".city").val(),
-        state: $(".state").val(),
+        state: $(".state").val()
       };
 
-      users.push(apptInput);
+      appts.push(apptInput);
 
-      $(".appts-set").html(appts.map(function(appt) {
-      //  return "<li>" + user.firstName + " " + user.lastName + " : " + user.email + "</li>";
+    $(".appts").html(apptArray.map(function(appt) {
+        return "<li>" + title + "</li>"; //+ "<li>" + date + "</li>"
+    //    + "<li>" + time + "</li>"
+    //    + "<li>" + street + ", " + city + " " + state "</li>";
 
-      }));
-      //change these
+  }));
+
       $(".appt-info").children('input').val('');
         });
 
-      });
+};
 
-  }
+});
 
+
+
+
+/*
   function showEditView() {
     show($('#edit-view').html());
   }
@@ -43,5 +51,4 @@ $(function () {
   $('#main-content').on('click', '.back', showListView);
 
   showListView();
-
-});
+*/
