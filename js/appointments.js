@@ -1,8 +1,10 @@
 $(function () {
   'use strict';
 
-  //function show(html) {
-  //  $('#main-content').html(html);
+  debugger;
+
+function show(html) {
+    $('#main-content').html(html);
 
     var apptArray = [];
 
@@ -21,23 +23,23 @@ $(function () {
       appts.push(apptInput);
 
     $(".appts").html(apptArray.map(function(appt) {
-        return "<li>" + title + "</li>"; //+ "<li>" + date + "</li>"
-    //    + "<li>" + time + "</li>"
-    //    + "<li>" + street + ", " + city + " " + state "</li>";
-
+        return
+        var description = _.template('<%- m.description %>', { variable: 'm' });
+        var date = _.template('<%- m.date %>', { variable: 'm' });
+        var time = _.template('<%- m.time %>', { variable: 'm' });
+        var street = _.template('<%- m.street %>', { variable: 'm' });
+        var city = _.template('<%- m.city %>', { variable: 'm' });
+        var state = _.template('<%- m.state %>', { variable: 'm' });
   }));
 
-      $(".appt-info").children('input').val('');
-        });
+ //clears fields after submit
+    $(".appt-info").children('input').val('');
+});
 
 };
 
 });
 
-
-
-
-/*
   function showEditView() {
     show($('#edit-view').html());
   }
@@ -51,4 +53,3 @@ $(function () {
   $('#main-content').on('click', '.back', showListView);
 
   showListView();
-*/
