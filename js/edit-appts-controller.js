@@ -15,7 +15,7 @@ app.router.route('appts/:id', function (id) {
   });
 
   // Bind our events
-  $('.appt-info').parsley();
+  $('.appt-info').parsley(); // remove this? 
 
   $('.appt-info').on('submit', function (e) {
     e.preventDefault();

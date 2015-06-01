@@ -4,7 +4,7 @@ app.router.route('appts/new', function () {
   app.show('appt-edit', { appt: new app.Appt(), title: 'New Appointment' });
 
   // Bind our events
-  $('.appt-info').parsley();
+  $('.appt-info').parsley(); //remove? no parsley
 
   $('.appt-info').on('submit', function (e) {
     e.preventDefault();

@@ -1,9 +1,7 @@
 $(function () {
   'use strict';
 
-  debugger;
-
-function show(html) {
+  function show(html) {
     $('#main-content').html(html);
 
     var apptArray = [];
@@ -22,7 +20,7 @@ function show(html) {
 
       appts.push(apptInput);
 
-    $(".appts").html(apptArray.map(function(appt) {
+      $(".appts").html(apptArray.map(function(appt) {
         return
         var description = _.template('<%- m.description %>', { variable: 'm' });
         var date = _.template('<%- m.date %>', { variable: 'm' });
@@ -30,15 +28,12 @@ function show(html) {
         var street = _.template('<%- m.street %>', { variable: 'm' });
         var city = _.template('<%- m.city %>', { variable: 'm' });
         var state = _.template('<%- m.state %>', { variable: 'm' });
-  }));
+      }));
 
- //clears fields after submit
-    $(".appt-info").children('input').val('');
-});
-
-};
-
-});
+      //clears fields after submit
+      $(".appt-info").children('input').val('');
+    });
+  }
 
   function showEditView() {
     show($('#edit-view').html());
@@ -53,3 +48,5 @@ function show(html) {
   $('#main-content').on('click', '.back', showListView);
 
   showListView();
+
+});
